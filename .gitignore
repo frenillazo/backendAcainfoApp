@@ -1,0 +1,73 @@
+# Archivos de ayuda
+HELP.md
+
+# Maven
+/target/
+/release/
+.mvn/wrapper/maven-wrapper.jar
+
+# Evitar subir builds en submódulos
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Spring Boot logs
+*.log
+
+# Credenciales y configuraciones locales
+application-*.properties
+.env
+*.keystore
+*.jks
+
+# STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Eclipse ###
+.metadata/
+.recommenders/
+.localhistory/
+
+# VS Code ###
+.vscode/
+
+# Eclipse Che ###
+/.che/
+
+# OS Files ###
+.DS_Store
+Thumbs.db
+
+# Logs y dumps ###
+hs_err_pid*
+*.hprof
+
+# Docker ###
+docker-compose.override.yml
+.env.override
+
+# Otros ###
+*.swp
+*~
