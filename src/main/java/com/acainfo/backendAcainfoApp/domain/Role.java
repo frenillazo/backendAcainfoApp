@@ -1,5 +1,6 @@
 package com.acainfo.backendAcainfoApp.domain;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Role {
 
     @Id
@@ -17,4 +18,5 @@ public class Role {
 
     @Column(unique = true, nullable = false)
     private String name; // e.g. "ROLE_USER", "ROLE_ADMIN"
+    
 }

@@ -31,9 +31,24 @@ public class Asignatura {
     private Boolean activo = Boolean.TRUE;
 
     @Builder.Default
+    @OneToMany(
+        mappedBy   = "asignatura",
+        cascade    = CascadeType.ALL,
+        orphanRemoval = true
+    )
     private Set<Inscripcion> inscripciones = new HashSet<>();
     @Builder.Default
+    @OneToMany(
+        mappedBy   = "asignatura",
+        cascade    = CascadeType.ALL,
+        orphanRemoval = true
+    )
     private Set<Material> materiales = new HashSet<>();
     @Builder.Default
+    @OneToMany(
+        mappedBy   = "asignatura",
+        cascade    = CascadeType.ALL,
+        orphanRemoval = true
+    )
     private Set<Horario> horarios = new HashSet<>();
 }
