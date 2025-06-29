@@ -46,7 +46,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -77,26 +76,65 @@
 			<artifactId>flyway-database-postgresql</artifactId>
 			<version>11.10.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.28</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.5.3</version>
-				<configuration>
-					<systemPropertyVariables>
-					<spring.profiles.active>test</spring.profiles.active>
-					<DB_PASSWORD>${env.DB_PASSWORD}</DB_PASSWORD>
-					</systemPropertyVariables>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<plugins>
+		<!-- Spring Boot Maven Plugin -->
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+
+    	<!-- Surefire para tests -->
+    	<plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+     		<artifactId>maven-surefire-plugin</artifactId>
+      		<version>3.5.3</version>
+      		<configuration>
+        		<systemPropertyVariables>
+          			<spring.profiles.active>test</spring.profiles.active>
+          			<DB_PASSWORD>${env.DB_PASSWORD}</DB_PASSWORD>
+        		</systemPropertyVariables>
+      		</configuration>
+    	</plugin>
+
+    <!-- Maven Compiler Plugin con Lombok -->
+    	<plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+      		<artifactId>maven-compiler-plugin</artifactId>
+      		<version>3.11.0</version>
+      		<configuration>
+        		<annotationProcessorPaths>
+          			<path>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						<version>1.18.28</version>
+          			</path>
+        		</annotationProcessorPaths>
+      		</configuration>
+    	</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.5.0</version>
+      		<configuration>
+				<source>21</source>
+				<encoding>UTF-8</encoding>
+      		</configuration>
+    	</plugin>
+  </plugins>
+</build>
 
 </project>
