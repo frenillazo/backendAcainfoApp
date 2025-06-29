@@ -9,9 +9,9 @@ import java.util.Set;
 @Table(name = "usuario")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)  // constructor sin argumentos protegido
-@AllArgsConstructor                                    // constructor con todos los campos
-@Builder                                               // opcional: para un builder fluido
+@NoArgsConstructor(access = AccessLevel.PROTECTED)  
+@AllArgsConstructor                                    
+@Builder                                              
 public class Usuario {
 
     @Id
@@ -30,6 +30,7 @@ public class Usuario {
     private String carrera;
     private Integer curso;
     private String metodoPago;
+    @Builder.Default
     private Boolean activo = Boolean.TRUE;
     private String fotoUrl;
 
@@ -39,7 +40,6 @@ public class Usuario {
       joinColumns = @JoinColumn(name = "user_id"),
       inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+    @Builder.Default
     private Set<Role> roles = new HashSet<>();
-
-    // No necesitas escribir getters/setters ni constructores: Lombok los genera.
 }
