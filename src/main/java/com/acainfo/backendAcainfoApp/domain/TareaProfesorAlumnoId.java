@@ -9,7 +9,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@AllArgsConstructor
+@AllArgsConstructor 
+@EqualsAndHashCode
 public class TareaProfesorAlumnoId implements Serializable {
     private Long idTarea;
     private Long idUsuario;
