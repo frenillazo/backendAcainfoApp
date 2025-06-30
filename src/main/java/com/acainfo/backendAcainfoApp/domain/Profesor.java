@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name = "profesor")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 public class Profesor implements Serializable {

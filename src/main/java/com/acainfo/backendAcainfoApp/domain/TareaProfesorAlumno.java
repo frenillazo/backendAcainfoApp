@@ -7,7 +7,7 @@ import lombok.*;
 @Table(name = "tarea_profesor_alumno")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 @IdClass(TareaProfesorAlumnoId.class)

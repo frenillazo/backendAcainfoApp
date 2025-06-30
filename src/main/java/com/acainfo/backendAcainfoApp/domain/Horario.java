@@ -9,7 +9,7 @@ import java.time.LocalTime;
 @Table(name = "horario")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 public class Horario {

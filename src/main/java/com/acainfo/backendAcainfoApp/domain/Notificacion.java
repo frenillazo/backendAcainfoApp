@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "notificacion")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 public class Notificacion {
