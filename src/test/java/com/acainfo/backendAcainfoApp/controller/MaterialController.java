@@ -5,13 +5,11 @@ import com.acainfo.backendAcainfoApp.service.MaterialService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 import java.util.List;
 
@@ -21,10 +19,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(MaterialController.class)
-@AutoConfigureMockMvc
-@WithMockUser
-@ActiveProfiles("test")
-class MaterialControllerTest {
+@AutoConfigureMockMvc(addFilters = false) // Disable security filters for testing
+class MaterialControllerTest extends BaseControllerTest {
 
     @Autowired
     private MockMvc mvc;

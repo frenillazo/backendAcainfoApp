@@ -4,14 +4,12 @@ import com.acainfo.backendAcainfoApp.domain.Inscripcion;
 import com.acainfo.backendAcainfoApp.service.InscripcionService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,10 +20,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(InscripcionController.class)
-@AutoConfigureMockMvc
-@WithMockUser
-@ActiveProfiles("test")
-class InscripcionControllerTest {
+@AutoConfigureMockMvc(addFilters = false) // Disable security filters for testing
+class InscripcionControllerTest extends BaseControllerTest {
 
     @Autowired
     private MockMvc mvc;

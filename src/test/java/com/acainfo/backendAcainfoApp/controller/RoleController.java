@@ -10,7 +10,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.security.test.context.support.WithMockUser;
 
 
 
@@ -21,9 +20,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(RoleController.class)
-@AutoConfigureMockMvc
-@WithMockUser
-class RoleControllerTest {
+@AutoConfigureMockMvc(addFilters = false) // Disable security filters for testing
+class RoleControllerTest extends BaseControllerTest {
 
     @Autowired
     private MockMvc mvc;
