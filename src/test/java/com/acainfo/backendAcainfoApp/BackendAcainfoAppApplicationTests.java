@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("test")                   // Carga application-test.properties
-@AutoConfigureMockMvc(addFilters = false) // Desactiva Spring Security en el test
+@ActiveProfiles("test")                  
+@AutoConfigureMockMvc
 class BackendAcainfoAppApplicationTests {
 
     @Test

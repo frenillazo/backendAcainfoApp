@@ -8,8 +8,9 @@ import java.io.Serializable;
 @Embeddable
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor 
+@EqualsAndHashCode
 public class TareaProfesorAlumnoId implements Serializable {
     private Long idTarea;
     private Long idUsuario;

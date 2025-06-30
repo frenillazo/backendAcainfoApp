@@ -9,7 +9,7 @@ import java.util.HashSet;
 @Table(name = "asignatura")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 public class Asignatura {

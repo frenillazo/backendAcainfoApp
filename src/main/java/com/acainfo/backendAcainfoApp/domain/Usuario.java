@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "usuario")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)  
+@NoArgsConstructor
 @AllArgsConstructor                                    
 @Builder                                              
 public class Usuario {

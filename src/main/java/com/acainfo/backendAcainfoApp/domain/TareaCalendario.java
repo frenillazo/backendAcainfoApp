@@ -9,7 +9,7 @@ import java.time.LocalTime;
 @Table(name = "tarea_calendario")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 public class TareaCalendario {
